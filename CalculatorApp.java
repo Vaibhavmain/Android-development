@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 class Calculator {
-    // Methods for each arithmetic operation
+    
     public double add(double num1, double num2) {
         return num1 + num2;
     }
@@ -31,18 +31,18 @@ public class CalculatorApp {
 
         while (true) {
             try {
-                // Get input numbers
+                
                 System.out.print("Enter the first number: ");
                 double num1 = scanner.nextDouble();
 
                 System.out.print("Enter the second number: ");
                 double num2 = scanner.nextDouble();
 
-                // Get the operation
+                
                 System.out.print("Choose an operation (+, -, *, /): ");
                 char operation = scanner.next().charAt(0);
 
-                // Perform calculation based on the operation
+                
                 double result = 0;
                 switch (operation) {
                     case '+':
@@ -59,29 +59,29 @@ public class CalculatorApp {
                         break;
                     default:
                         System.out.println("Error: Invalid operation.");
-                        continue; // Skip the rest of the loop and start a new iteration
+                        continue; 
                 }
 
-                // Display the result
+                
                 System.out.println("Result: " + result);
             } catch (Exception e) {
                 System.out.println("Error: " + e.getMessage());
             } finally {
-                // Consume the newline character in the input buffer
+                
                 scanner.nextLine();
             }
 
-            // Ask if the user wants to perform another calculation
+            
             System.out.print("Do you want to perform another calculation? (yes/no): ");
             String response = scanner.nextLine().toLowerCase();
 
             if (!response.equals("yes")) {
-                // Exit the loop if the user does not want to continue
+                
                 break;
             }
         }
 
-        // Close the scanner
+        
         scanner.close();
     }
 }
